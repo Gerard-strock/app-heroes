@@ -7,16 +7,18 @@ import { Navbar } from '../ui/Navbar'
 
 export const DashBoardRouts = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <Routes>
-        <Route path='/marvel' element={<MarvelScreen />} />
-        <Route path='/dc' element={<DcScreen />} />
-        <Route path='/search' element={<SearchScreen />} />
-        <Route path='/hero' element={<HeroScreen />} />
+      <div className='container'>
+        <Routes>
+          <Route path='/marvel' element={<MarvelScreen />} />
+          <Route path='/dc' element={<DcScreen />} />
+          <Route path='/search' element={<SearchScreen />} />
+          <Route path='/hero' element={<HeroScreen />} />
 
-        <Route path='/' element={<MarvelScreen />} />
-      </Routes>
-    </div>
+          <Route path='/' element={<MarvelScreen />} />
+        </Routes>
+      </div>
+    </>
   )
 }
