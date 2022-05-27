@@ -19,7 +19,7 @@ export const HeroCard = ({
               className='card-img'
             />
           </div>
-          <div className='col-8'>
+          <div className='col-8 '>
             <div className='card-body'>
               <h5 className='card-title'>{superhero}</h5>
               <p className='card-text'>{alterEgo}</p>
