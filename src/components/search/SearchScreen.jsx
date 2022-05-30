@@ -30,12 +30,15 @@ export const SearchScreen = () => {
       <h1 style={{ textAlign: 'center' }}>SearchScreen </h1>
       <hr />
 
-      <div className='row'>
+      <div className='row animate__animated animate__fadeIn'>
         <div className='col-5'>
           <h4>Search For</h4>
           <hr />
 
-          <form onSubmit={handleSearch}>
+          <form
+            onSubmit={handleSearch}
+            className='animate__animated animate__fadeIn'
+          >
             <input
               type='text'
               placeholder='Search a hero...'
@@ -46,11 +49,7 @@ export const SearchScreen = () => {
               value={searchText}
             />
 
-            <button
-              className='btn btn-outline-primary mt-1'
-            >
-              Search
-            </button>
+            <button className='btn btn-outline-primary mt-1'>Search</button>
           </form>
         </div>
 
@@ -58,11 +57,15 @@ export const SearchScreen = () => {
           <h4>Results</h4>
           <hr />
 
+          {
+            (q === '')
+              ? <div className='alert alert-info'>Search a hero</div>
+              : (heroesFiltered.length === 0) &&
+                <div className='alert alert-danger'>Not found: {q}</div>
+          }
+
           {heroesFiltered.map((hero) => (
-            <HeroCard
-              key={hero.id}
-              {...hero}
-            />
+            <HeroCard key={hero.id} {...hero} />
           ))}
         </div>
       </div>
