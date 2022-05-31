@@ -26,7 +26,7 @@ export const SearchScreen = () => {
   }
 
   return (
-    <div>
+    <>
       <h1 style={{ textAlign: 'center' }}>SearchScreen </h1>
       <hr />
 
@@ -69,6 +69,6 @@ export const SearchScreen = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   )
 }
